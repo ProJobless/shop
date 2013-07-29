@@ -1,0 +1,236 @@
+@charset "utf-8";
+/* CSS Document 
+
+gris muy claro: fafafa
+gris: 96908C
+verde: 009036
+verde limon: 88c322
+verde oscuro: 009037
+azul: 013d7c
+azul oscuro: 054ab6
+naranja: fc3300
+*/
+
+
+
+
+body 								
+{
+	font:12px/15px Arial, Helvetica, sans-serif;
+	color:#96908C;
+	margin:0px;
+	background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/bg_body.jpg) 0px 0px repeat-x #ffffff;
+	padding:22px 20px 25px 20px;
+}
+
+img {border:0;}
+
+			#container{
+				width:1105px;
+				font-family:'Helvetica',Arial,Sans Serif;
+				font-size: 14px;
+				color: #333;
+				margin:auto;
+			}
+
+			#lang{
+				text-align: right;
+			}
+
+			#header{
+				background-color:#88c322;
+				height: 215px;
+			}
+			table tr td{
+				vertical-align: top;
+				
+			}
+			.yellow{
+				background: #FCDC2F;	
+			}
+			.green{
+				background: #C9EA8F;
+			}
+			.green_text{
+				text-align:center;
+				color: #88C36C;
+			}
+			
+			.cuadro{
+				margin-top: 10px;
+				padding: 15px;
+				border: #CCC solid 1px;
+				text-decoration: none;
+				color: #000;
+				font-size: 12px;
+			}
+			
+			a.cuadro:hover {
+				text-decoration: underline;
+			}
+
+
+/* ************************************************************************************* */
+#header		 		{vertical-align:middle; text-align:right; float:right;}
+#header td 			{vertical-align:middle; height:26px;}
+#header td 		 	{color:#464545; font-size:13px; line-height:14px; font-weight:normal;font-family:Arial, Helvetica, sans-serif;} 	
+#header img			{vertical-align:middle;}
+
+#header_separator	{text-align:center; width:50%;}
+
+.wrapper_header_t 		{ padding:5px; background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_header_t.gif) 0px 0px repeat-x #f8f8f8;}
+/*.wrapper_header_b 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_header_b.gif) 0px 100% repeat-x;}
+.wrapper_header_r 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_header_r.gif) 100% 0px repeat-y;}
+.wrapper_header_l 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_header_l.gif) 0px 0px repeat-y;}
+
+.wrapper_header_tl 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_header_tl.gif) 0px 0px no-repeat; width:100%;}
+.wrapper_header_tr 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_header_tr.gif) 100% 0px no-repeat;}
+.wrapper_header_bl		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_header_bl.gif) left 100% no-repeat;}
+.wrapper_header_br 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_header_br.gif) 100% 100% no-repeat;padding:14px 17px 13px 10px; height:99px;}
+*/
+/* ************************************************************************************* */
+
+/* ****************************CATEGORIAS************************************** */
+#categorias {background-color:#fafafa; border:solid 1px #dbdbdb; margin:0; padding:5px; width:197px;}
+#categorias .categoria {display:block; background-color:#fafafa; color:#96908C; margin:20px 0 10px 0;}
+#categorias .categoria .subcategoria li {	
+	margin:5px 0 3px 0;
+	border:0;
+	list-style-image:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/bg_list.gif);
+	margin-left:-10px;
+}
+.subcategoria a, .subcategoria a:link, .subcategoria a:visited, .subcategoria a:hover, .subcategoria a:active 
+{
+	text-decoration:none;
+	color:#96908C;
+	display:block;
+	padding:3px;
+	width:100%;
+	}
+
+#categorias .categoria .subcategoria li a:hover, #categorias .categoria .subcategoria li a:active 
+{
+	background-color:#96908C;
+	color:#FFF;
+	}
+/* ****************************CATEGORIAS************************************** */
+
+
+/* ****************************TOPTEN************************************** */
+#topten {background-color:#fafafa; border:solid 1px #dbdbdb; margin:0; padding:5px;}
+#topten {display:block; background-color:#fafafa;}
+#topten li {	
+	margin:0;
+	border:0;
+	border-bottom:solid 1px #dbdbdb;
+	list-style-image:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/bg_list.gif);
+	 margin:10px 0 5px 20px;
+}
+#topten li a, #topten li a:link, #topten li a:visited, #topten li a:hover, #topten li a:active 
+{
+	text-decoration:none;
+	color:#96908C;
+	display:block;
+	padding:3px;
+	width:100%;
+	}
+
+#topten li a:hover, #topten li a:active 
+{
+	background-color:#96908C;
+	color:#FFF;
+	}
+/* ****************************TOPTEN************************************** */
+
+/* ****************************FOOTER************************************** */
+#footer		  	  {color:#797979; font-size:12px; line-height:24px; font-weight:normal; font-family:Tahoma, Geneva, sans-serif; vertical-align:middle; text-align:center; background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper2_t.gif) 0px 0px repeat-x #ffffff;  padding:20px; border-right:solid 1px #dbdbdb; border-bottom:solid 1px #dbdbdb; border-left:solid 1px #dbdbdb; margin:15px 0 0 0;}	
+#footer a 		  {color:#797979; font-size:12px; line-height:24px; font-weight:normal; font-family:Tahoma, Geneva, sans-serif; text-decoration:none;} 			
+#footer a:hover   {color:#797979;text-decoration:underline;}
+/* ****************************FOOTER************************************** */
+
+
+/* ****************************TABLA************************************** */
+.cuadro_producto {margin-top:30px; padding:0;}
+.cuadro_producto_precio {
+	margin-top:30px; 
+	padding:0;
+	border: #CCC solid 1px;
+	text-decoration: none;
+	color: #000;
+	font-size: 12px;
+}
+
+.cuadro h4 { font-size:18px;}
+/* ****************************TABLA************************************** */
+
+
+.font_150 {font-size:150%;}
+.font_140 {font-size:140%;}
+.font_130 {font-size:130%;}
+.font_120 {font-size:120%;}
+.font_110 {font-size:110%;}
+.clear { clear:both;}
+
+.ver_descripcion {height:30px; width:93%; border:solid 1px #dbdbdb; padding:10px; padding-top:20px; background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_name_t.gif); background-repeat:repeat-x;}
+
+.ver_descripcion a, .ver_descripcion a:link,.ver_descripcion a:visited,.ver_descripcion a:hover,.ver_descripcion a:active {color:#96908C; text-decoration:none; font-weight:bold;}
+
+
+.font_precio {font-size:24px; color:#054ab6; font-weight:bold;}
+.font_naranja {color:#fc3300;}
+
+.cuadro_precio,#cuadro_generico { padding:10px; background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/wrapper_name_br.gif) 0px 0px repeat-x #f8f8f8; margin:0; border:solid 1px #fafafa;}
+
+.agregar_a_carrito {
+	background-color:#88C323; color:#FFFFFF; font-weight:bold; padding:10px; width:93%; cursor:pointer; border:solid 1px #009037; text-align:center; margin:auto;
+	}
+
+.agregar_a_carrito a {color:#FFF; text-decoration:none;}
+
+
+/* ************************************************************************************* */
+.prod2_table			{border:0px solid #d8d7cb;margin:auto;}
+.prod2_td				{padding:0px;}
+
+.prod2_t 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/prod2_border.gif) 0px 0px repeat-x #ffffff;}
+.prod2_b 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/prod2_border.gif) 0px 100% repeat-x}
+.prod2_r 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/prod2_border.gif) 100% 0px repeat-y}
+.prod2_l 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/prod2_border.gif) 0px 0px repeat-y;}
+.prod2_tl 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/prod2_tl.gif) 0px 0px no-repeat; width:100%;}
+.prod2_tr 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/prod2_tr.gif) 100% 0px no-repeat;}
+.prod2_bl		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/prod2_bl.gif) left 100% no-repeat;}
+.prod2_br 		{background:url(http://www.tecnobotanicademexico.com.mx/tecno/admin/img/prod2_br.gif) 100% 100% no-repeat;vertical-align:middle;}
+.new			{padding:0px 9px 10px 9px;}
+.new2			{padding:0px 9px 10px 9px;}
+/* ************************************************************************************* */
+
+/* ************************************************************************************* */
+.infoBox_ 				{margin:3px 0px 9px 0px;}
+.infoBox_ .infoBox__ 	{border:0px solid #575656;padding:10px 9px 10px 9px;}
+/* ************************************************************************************* */
+.infoBox_  TEXTAREA,
+.infoBox_ .main  TEXTAREA,
+.infoBox_ .main  input,
+.infoBox_ .main  select,
+.infoBox_ .fieldValue  select,
+.infoBox_ .fieldValue  input			{border:1px solid #808080;border-right:1px solid #cdcdcd; border-bottom:1px solid #cdcdcd;background:#ffffff; color:#464545;}		
+/* ************************************************************************************* */
+
+.indice {	
+	color:#000;
+	font-weight:bold;
+	padding:50px 0 0 20px;
+	
+}
+
+.descripcion {
+	padding:0 0 0 20px;
+}
+
+.bullet { top:-50px;}
+
+#cuadro_generico{
+	border: 1px solid #CCC;
+	width: 600px;
+}
+
