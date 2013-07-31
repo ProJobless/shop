@@ -47,6 +47,17 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+        
+        public function correo($user){
+            $this->load->model('carro_model','carro');
+            //$this->load->library('phpsession');
+            $this->load->model('pedido_model','pedido');
+            //$data['usuario'] = $user;
+            //$this->load->view('carro/correo',$data);
+            //print_r($_SESSION);
+            $this->pedido->envia_correo($user);
+            
+        }
 }
 
 /* End of file welcome.php */

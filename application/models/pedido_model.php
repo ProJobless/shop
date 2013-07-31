@@ -50,7 +50,7 @@ class Pedido_model extends CI_Model {
             
             $data['tipo'] = 'success';
             $data['msg'] = ($usuario == 'usuario') ? 'El pedido ha sido enviado con éxito.' : 'El pedido se ha colocado con éxito.';
-            
+            $this->envia_correo('mayorista');
             $this->phpsession->clear('contenidos','carro');
         }else{
             $data['tipo'] = 'error';
@@ -249,6 +249,22 @@ class Pedido_model extends CI_Model {
         $q = $this->db->query($query);
         
         return $q->num_rows();
+    }
+    
+    public function envia_correo($tipo_user){
+        $user = $this->phpsession->get('datos',$tipo_user);
+        $data['usuario'] = $tipo_user;
+        $this->load->library('email');
+        $this->email->initialize(configuraMail2());
+        $this->email->set_newline("\r\n");
+
+        $this->email->from('noresponder@tecnobotanicademexico.com.mx', 'Tecnobotánica de México');
+        $this->email->to($user['c']);
+        $this->email->subject('Confirmacion de Pedido');
+        $this->email->message($this->load->view('carro/correo', $data, true));
+        $this->email->send();
+        
+        //echo $this->email->print_debugger();
     }
     
     
