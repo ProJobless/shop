@@ -6,6 +6,7 @@ $total = $this->carro->total_articulos();
 $iva = 0;
 $precio = 0;
 $subtotal = 0;
+$largo=(!empty($mayor['promocion']))?10:8;
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -33,13 +34,24 @@ $subtotal = 0;
             <table style='width:90%;'>
                 <tbody>
                     <tr bgcolor="#FCDC2F">
-                        <td colspan="8">
+                        <td colspan="<?php echo $largo;?>">
                             Productos(<span id="cart-articulos"><?php echo $total; ?></span> Artículo<?php echo ($total != 1) ? 's' : ''; ?>)
                             <span id='cart-load' class='pull-right'></span>
                         </td>
                     </tr>
                     <tr>
+                        <?php 
+                        if(!empty($mayor['promocion'])){?>
+                        <td>Total de Piezas</td>
+                        <td>Cantidad con Costo</td>
+                        <td>Cantidad sin Costo</td>
+                        <?php    
+                        }else{?>
                         <td>Cantidad</td>
+                        <?php
+                        }
+                        ?>
+                        
                         <td>Código</td>
                         <td>Nombre Producto</td>
                         <td>Estado Físico</td>
@@ -52,12 +64,28 @@ $subtotal = 0;
                     if (!empty($carro)) {
                         foreach ($carro as $k => $c) {
                             $precio = $c['price'] * ($mayor['descuento'] / 100);
+                            $sin_costo = ($c['qty'] > 1) ? floor($c['qty']/2) : 0;
                             //print_r($c);
                             ?>
                             <tr>
+                                
+                                <?php 
+                                if(!empty($mayor['promocion'])){?>
+                                
+                                <td><?php echo $c['qty'] + $sin_costo;?></td>
+                                      <td>
+                                           <?php echo $c['qty'];?>
+                                       </td>
+                                <td><?php echo $sin_costo;?></td>
+                                <?php    
+                                }else{?>
                                 <td>
-        <?php echo $c['qty']; ?>
+                                    <?php echo $c['qty']; ?>
                                 </td>
+                                <?php
+                                }
+                                ?>
+                                
                                 <td><?php echo $c['id']; ?></td>
                                 <td><?php echo $c['name']; ?></td>
                                 <td><?php echo $c['options']['estado_fisico']; ?></td>
@@ -76,22 +104,22 @@ $subtotal = 0;
                     } else {
                         ?>
                         <tr>
-                            <td colspan='8'> No hay productos en tu carrito.</td>
+                            <td colspan='<?php echo $largo;?>'> No hay productos en tu carrito.</td>
                         </tr>
                         <?php
                     }
                     ?>
 
                     <tr bgcolor="#FCDC2F">
-                        <td align="right" colspan="8">Subtotal:  <span id="cart-subtotal"><?php echo number_format($subtotal, 2); ?></span> MXP</td>
+                        <td align="right" colspan="<?php echo $largo;?>">Subtotal:  <span id="cart-subtotal"><?php echo number_format($subtotal, 2); ?></span> MXP</td>
 
                     </tr>
                     <tr bgcolor="#FCDC2F">
-                        <td align="right" colspan="8">Iva:  <span id="cart-iva"><?php echo number_format($iva, 2); ?></span> MXP</td>
+                        <td align="right" colspan="<?php echo $largo;?>">Iva:  <span id="cart-iva"><?php echo number_format($iva, 2); ?></span> MXP</td>
 
                     </tr>
                     <tr bgcolor="#FCDC2F">
-                        <td align="right" colspan="8">Total:  <span id="cart-subtotal"><?php echo number_format($subtotal + $iva, 2); ?></span> MXP</td>
+                        <td align="right" colspan="<?php echo $largo;?>">Total:  <span id="cart-subtotal"><?php echo number_format($subtotal + $iva, 2); ?></span> MXP</td>
 
                     </tr>
                 </tbody>
