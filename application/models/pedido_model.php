@@ -253,18 +253,20 @@ class Pedido_model extends CI_Model {
     
     public function envia_correo($tipo_user){
         $user = $this->phpsession->get('datos',$tipo_user);
+        //print_r($user);
+        //echo 'SOME---------';
         $data['usuario'] = $tipo_user;
         $this->load->library('email');
         $this->email->initialize(configuraMail2());
-        $this->email->set_newline("\r\n");
+        //$this->email->set_newline("\r\n");
 
-        $this->email->from('noresponder@tecnobotanicademexico.com.mx', 'Tecnobotánica de México');
+        $this->email->from('noresponder@smadesarrollo.com', 'Tecnobotánica de México');
         $this->email->to($user['c']);
         $this->email->subject('Confirmacion de Pedido');
         $this->email->message($this->load->view('carro/correo', $data, true));
         $this->email->send();
         
-        //echo $this->email->print_debugger();
+        echo $this->email->print_debugger();
     }
     
     

@@ -91,13 +91,13 @@
 
                         $('#buscar').click(function(){
 
-                            $("#results").html('<center><img src="<?php echo base_url('/img/cargando.gif');?>" alt="Cargando..." /><center>');
+                            $("#results").html('<center><img src="<?php echo base_url('admin/img/cargando.gif');?>" alt="Cargando..." /><center>');
                             var busqueda = $('#busqueda').val();
                             if(busqueda != ''){
 
                                 $.ajax({
                                     type: "POST",
-                                    url: "<?php echo base_url('/cliente/buscar');?>",
+                                    url: "<?php echo base_url('admin/cliente/buscar');?>",
                                     cache: false,
                                     data: {buscar: busqueda}
                                 }).done(function( html ) {

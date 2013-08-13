@@ -213,10 +213,7 @@
     
             $('#seguir_pedido').live('click',function(){
                 $("#load_pedido").html('<em>Procesando su carrito. Espere por favor</em> <img src="<?php echo base_url('img/cart-load-small.gif');?>" alt="Cargando..." />');
-                //$("#carro_pedido").load('<?php echo site_url('mayorista/panel/carro');?>');
-                //$("#pedido").addClass('hide');
-                //$("#carro_pedido").removeClass('hide');
-                //$("#load_pedido").html('');
+                
                 
                 var qty,json_produ,id;
                 

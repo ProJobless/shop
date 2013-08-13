@@ -86,7 +86,13 @@ class Panel extends CI_Controller {
         //print_r($post);
         $productos = json_decode($post['pedido']);
         $this->carro->mayorista($productos);
-        $this->load->view('carro/mayorista');
+        $mayor = $this->phpsession->get('datos','mayorista');
+        if(!empty($mayor['promocion'])){
+            $this->load->view('carro/mayorista');
+        }else{
+            $this->load->view('carro/mayorista_c');
+        }
+        
     }
     
     public function colocar(){
