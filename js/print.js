@@ -1,4 +1,4 @@
-<--- --------------------------------------------------------------------------------------- ----
+/*
 	
 	Blog Entry:
 	Ask Ben: Print Part Of A Web Page With jQuery
@@ -12,7 +12,7 @@
 	Date Posted:
 	May 21, 2009 at 9:10 PM
 	
----- --------------------------------------------------------------------------------------- --->
+*/
 
 
 // Create a jquery plugin that prints the given element.
