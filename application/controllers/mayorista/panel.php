@@ -78,7 +78,14 @@ class Panel extends CI_Controller {
     }
     
     public function carro(){
-        $this->load->view('carro/mayorista');
+        $mayor = $this->phpsession->get('datos','mayorista');
+        //print_r($mayor);
+        if(empty($mayor['promocion'])){
+            $this->load->view('carro/mayorista');
+        }else{
+            $this->load->view('carro/mayorista_c');
+        }
+        //$this->load->view('carro/mayorista');
     }
     
     public function agregar_carro(){
@@ -87,6 +94,7 @@ class Panel extends CI_Controller {
         $productos = json_decode($post['pedido']);
         $this->carro->mayorista($productos);
         $mayor = $this->phpsession->get('datos','mayorista');
+        //print_r($mayor);
         if(empty($mayor['promocion'])){
             $this->load->view('carro/mayorista');
         }else{
@@ -114,6 +122,12 @@ class Panel extends CI_Controller {
            
         }
         
+    }
+    
+    public function lista_excel(){
+        $this->load->model('pedido_model','pedido');
+        $this->pedido->lista_excel();
+        redirect('mayorista/panel/pedido');
     }
     
     public function _factura_completa($str){

@@ -269,6 +269,65 @@ class Pedido_model extends CI_Model {
         //echo $this->email->print_debugger();
     }
     
+    public function lista_excel(){
+        $config['upload_path'] = './uploads/listas';
+        $config['allowed_types'] = 'csv';
+        $config['max_size'] = '800';                    
+        $config['file_name'] = 'lista_'.date('ymdHis');
+        $config['overwrite'] = TRUE;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('lista')) {
+            //print_r($_FILES);
+            //echo $this->upload->display_errors();
+            $this->phpsession->flashsave('error', $this->upload->display_errors());                        
+        } else {
+            //$acierto = TRUE;
+            $img = $this->upload->data();
+            //echo '<br> --> '; print_r($img);
+            $this->load->library('CSVReader');
+            $csv = $this->csvreader->parse_file('uploads/listas/'.$img['file_name']);
+            
+            if(is_array($csv)){
+                if(isset($csv[0]['codigo']) && isset($csv[0]['cantidad'])){
+                    $this->load->model('producto_model','producto');
+                    $this->load->model('carro_model','carro');
+                    $string = '';
+                    $cont = 0;
+                    foreach($csv as $c){
+                        $prueba = $this->producto->check_presentacion(trim($c['codigo']));
+                        //echo $this->db->last_query();
+                        if($prueba != 0){
+                            $this->carro->agregar($prueba,trim($c['cantidad']),TRUE);
+                            $cont++;
+                        }else{
+                            $string .=  '<p>No existe un producto con clave '.$c['codigo'].'</p>';
+                        }
+                    }
+                    
+                    if(!empty($string)){
+                        $this->phpsession->flashsave('error',$string);
+                    }
+                    
+                    if($cont != 0){
+                        $this->phpsession->flashsave('acierto','Se han agregado '.$cont.' producto(s) al carro de compras.');                        
+                        $this->phpsession->flashsave('mostrar_carro',TRUE);
+                    }
+                }else{
+                    $this->phpsession->flashsave('error','El archivo no tiene los encabezados correctos.');
+                    //echo 'Encabezados incorrectos';
+                }
+            }else{
+                $this->phpsession->flashsave('error','El archivo esta vacío o corrupto.');
+                //echo 'Archivo Vacío o Corrupto';
+            }
+            //print_r($csv);
+            
+
+        }
+    }
+    
     
 
 }

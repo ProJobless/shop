@@ -49,5 +49,17 @@ class Producto_model extends CI_Model {
         
         return $q->result_array();
     }
+    
+    public function check_presentacion($codigo){
+        $q = $this->db->get_where('presentacion',array('clave'=>$codigo));
+        if($q->num_rows() > 0){
+            $tmp = $q->result_array();
+            return $tmp[0]['idPresentacion'];
+        }else{
+            return 0;
+        }
+        
+        
+    }
 
 }
