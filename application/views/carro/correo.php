@@ -29,7 +29,7 @@ $largo=(!empty($mayor['promocion']))?10:8;
         <div class='container' style='margin-top:15px; width:85%; min-width: 1100px'>
 
             <div id='imagenes' style='height:200px;'>
-                <h1>BANNER</h1>
+                    <img src='<?php echo base_url('img/banner-correo.jpg');?>' alt='Pedido Enviado' />
             </div>
             <table style='width:90%;'>
                 <tbody>
@@ -99,7 +99,7 @@ $largo=(!empty($mayor['promocion']))?10:8;
                             </tr>
                             <?php
                             $subtotal += $precio * $c['qty'];
-                            $iva += ($c['options']['iva'] == 'SI') ? $precio * (16 / 100) : 0;
+                            $iva += ($c['options']['iva'] == 'SI') ? ($precio * (16 / 100)) * $c['qty']: 0;
                         }
                     } else {
                         ?>

@@ -266,7 +266,7 @@ class Pedido_model extends CI_Model {
         $this->email->message($this->load->view('carro/correo', $data, true));
         $this->email->send();
         
-        echo $this->email->print_debugger();
+        //echo $this->email->print_debugger();
     }
     
     

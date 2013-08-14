@@ -48,7 +48,7 @@ $subtotal = 0;
         </tr>
         <?php
             $subtotal += $precio * $c['qty'];
-            $iva += ($c['options']['iva'] == 'SI') ? $precio * (16/100) : 0;
+            $iva += ($c['options']['iva'] == 'SI') ? ($precio * (16 / 100)) * $c['qty'] : 0;
             }
         }else{
         ?>
