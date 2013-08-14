@@ -219,5 +219,4 @@ pip-log.txt
 ##############
 
 uploads/
-nbproject/
-nbproject\
+nbproject/private/private.properties
