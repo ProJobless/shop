@@ -66,6 +66,52 @@ class Pedido extends CI_Controller {
         
         $this->load->view('pedido/previo',$data);
     }
+    
+    public function confirmar(){
+        $this->load->model('cuenta_model', 'cuenta');
+        $data['general'] = $this->cuenta->direccion();
+        $this->load->view('pedido/confirmar',$data);
+    }
+    
+    public function colocar(){
+        if($this->form_validation->run('guardar_pedido') === FALSE){
+           echo '<div class="alert alert-error">'.validation_errors().'</div>'; 
+        }else{
+           $this->load->model('pedido_model','pedido');
+           $post = $this->input->post(NULL,TRUE);
+           //print_r($post);
+           $info = $this->pedido->guardar($post);
+           
+           echo '<div class="alert alert-'.$info['tipo'].'">'.$info['msg'].'</div>';
+           
+           if($info['tipo'] == 'success'){
+               echo '<script type="text/javascript">
+                    window.location.replace("'.site_url('tienda/exito').'");
+                   </script>';
+           }
+           
+        }
+    }
+    
+    public function _factura_completa($str){
+        
+        
+        if((!empty($str)) && (empty($_POST['f_razon']) || empty($_POST['f_rfc']) || empty($_POST['f_calle']) || empty($_POST['f_colonia']) || empty($_POST['f_cp']) || empty($_POST['f_delegacion']) || empty($_POST['f_estado']) || empty($_POST['f_pais'])) ){
+            $this->form_validation->set_message('_factura_completa','Para solicitar factura debes llenar todos los campos de la sección Factura.');
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+    public function _envio_completa($str){
+        if((!empty($str)) && (empty($_POST['e_persona']) || empty($_POST['e_calle']) || empty($_POST['e_colonia']) || empty($_POST['e_cp']) || empty($_POST['e_delegacion']) || empty($_POST['e_estado']) || empty($_POST['e_pais'])) ){
+            $this->form_validation->set_message('_envio_completa','Para solicitar dirección diferente de envío debes llenar todos los campos de la seccion Envío.');
+            return false;
+        }else{
+            return true;
+        }
+    }
 
 }
 

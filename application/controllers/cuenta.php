@@ -58,7 +58,7 @@ class Cuenta extends CI_Controller {
         $data['global_config'] = $this->tienda->config_inicial();
         
         $cuenta = $this->phpsession->get('datos','usuario');
-        
+        //print_r($cuenta);
         if(empty($cuenta)){
             $this->load->view('cuenta/entra_crea',$data);
         }else{
@@ -70,12 +70,13 @@ class Cuenta extends CI_Controller {
     
     public function entrar(){
         $data['global_config'] = $this->tienda->config_inicial();
-        
+       
         if($this->form_validation->run('entrar_cuenta') === FALSE){
             $this->load->view('cuenta/entra_crea',$data);
         }else{
             $post = $this->input->post(NULL,TRUE);
             $msg = $this->cuenta->iniciar($post);
+            
             $this->phpsession->flashsave($msg['tipo'],$msg['contenido']);
             redirect('cuenta');
         }

@@ -17,6 +17,7 @@ class Cuenta_model extends CI_Model {
         
         if($sql->num_rows() > 0){
             $tmp = $sql->result_array();
+            
             $this->phpsession->save('datos',$tmp[0],$session_space);
             $msg['tipo'] = 'acierto';
             $msg['contenido'] = 'Bienvenido a tu cuenta!!!';

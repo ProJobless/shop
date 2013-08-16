@@ -128,7 +128,7 @@ $config = array(
         array(
             'field' => "f_rfc",
             'label' => 'RFC(Factura)',
-            'rules' => 'alpha|callback__factura_completa'
+            'rules' => 'alpha_numeric|callback__factura_completa'
         ),
         array(
             'field' => "f_calle",

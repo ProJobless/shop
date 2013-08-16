@@ -1,7 +1,11 @@
 <?php 
+$mayor = $this->phpsession->get('datos','usuario');
 $carro = $this->phpsession->get('contenidos','carro');
 $total = $this->carro->total_articulos();
-$subtotal = $this->carro->get_subtotal();
+//$subtotal = $this->carro->get_subtotal();
+$iva = 0;
+$precio = 0;
+$subtotal = 0;
 ?>
 
 <table style='width:90%;'>
@@ -25,24 +29,26 @@ $subtotal = $this->carro->get_subtotal();
         <?php
         if(!empty($carro)){
             foreach($carro as $k => $c){
+                $precio = $c['price'] * ($mayor['descuento']/100);
                 //print_r($c);?>
         <tr>
             <td>
-                <input  class='input-mini cart-qty' type="text" value="<?php echo $c['qty'];?>" data-id='<?php echo $k;?>' data-cartsize='mediano' />
+                <?php echo $c['qty'];?>
             </td>
             <td><?php echo $c['id'];?></td>
             <td><?php echo $c['name'];?></td>
             <td><?php echo $c['options']['estado_fisico'];?></td>
             <td><?php echo $c['options']['contenido_neto'];?></td>
-            <td><?php echo ($c['options']['contenido_neto'] == 'NO') ? 'N.A.' : '16';?></td>
-            <td><?php echo number_format($c['price'] * (125/100),2);?> MPX</td>
+            <td><?php echo ($c['options']['iva'] == 'NO') ? 'N.A.' : '16';?></td>
+            <td><?php echo number_format($precio,2);?> MPX</td>
             <td>
-                <span id='cart-row<?php echo $k;?>'><?php echo number_format(($c['price'] * (125/100)) * $c['qty'],2);?></span> MPX
-                <br />
-                <a href="#N" class='cart-remove' data-id='<?php echo $k;?>' data-cartsize='mediano' >Quitar</a> 
+                <span id='cart-row<?php echo $k;?>'><?php echo number_format($precio * $c['qty'],2);?></span> MPX
+                
             </td>
         </tr>
         <?php
+            $subtotal += $precio * $c['qty'];
+            $iva += ($c['options']['iva'] == 'SI') ? ($precio * (16 / 100)) * $c['qty'] : 0;
             }
         }else{
         ?>
@@ -55,23 +61,16 @@ $subtotal = $this->carro->get_subtotal();
         
         <tr bgcolor="#FCDC2F">
             <td align="right" colspan="8">Subtotal:  <span id="cart-subtotal"><?php echo number_format($subtotal,2);?></span> MXP</td>
-            <td></td>
+            
+        </tr>
+        <tr bgcolor="#FCDC2F">
+            <td align="right" colspan="8">Iva:  <span id="cart-iva"><?php echo number_format($iva,2);?></span> MXP</td>
+            
+        </tr>
+        <tr bgcolor="#FCDC2F">
+            <td align="right" colspan="8">Total:  <span id="cart-subtotal"><?php echo number_format($subtotal + $iva,2);?></span> MXP</td>
+            
         </tr>
     </tbody>
 </table>
 <br />
-<div class='btn-group'>
-    
-    <a href="<?php echo site_url('tienda/vaciar_carro');?>" class='btn' type="button">Cancelar</a>
-    <?php
-    $user = $this->phpsession->get('datos','usuario');
-    if(!empty($user)){?>
-        <a href="<?php echo site_url('pedido/confirmar');?>" class='btn btn-success' type="button">Continuar</a>
-    <?php
-    }else{?>
-        <a href="<?php echo site_url('cuenta');?>" class='btn btn-success' type="button">Iniciar Sesión</a>
-    <?php
-    }
-    ?>
-    
-</div>
