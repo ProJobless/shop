@@ -3,7 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Shop | Some</title>
-        <link href="<?php echo base_url(); ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>css/screen.css" rel="stylesheet" type="text/css" />
         
         <style>
             td {
@@ -82,7 +84,7 @@
                 
                 <?php 
                 if($lateral_izquierdo!=0){?>
-                <div class='pull-left' style='width:25%'>
+                <div class='pull-left' style='width:20%'>
                     <?php $this->load->view('common/lateral_izquierdo');?>
                 </div>    
                 <?php

@@ -13,7 +13,7 @@ if($lateral_derecho != 0){?>
 
 
     <div class="wrapper2_t">
-        <a href="http://tecnobotanicademexico.com.mx/privacidad.html">Pol&iacute;tica de privacidad</a> | <a href="#N">Ofertas</a> | <a href="http://www.circulosaludable.com.mx/comercializadora/inicio/crear_cuenta/es">Crear Cuenta</a> | <a href="http://www.circulosaludable.com.mx/comercializadora/inicio/cuenta/es">Entrar</a> <br />
+        <a href="http://tecnobotanicademexico.com.mx/privacidad.html">Pol&iacute;tica de privacidad</a> | <a href="#N">Ofertas</a> | <a href="<?php echo site_url('cuenta');?>">Crear Cuenta</a> | <a href="<?php echo site_url('cuenta');?>">Entrar</a> <br />
         Copyright © 2013 C&iacute;rculo Saludable 
     </div>
 
@@ -71,6 +71,7 @@ if($lateral_derecho != 0){?>
                 $("#error_ajax").css('display','none');
                 $("#carro").html(html);
                 $('#cart-load').html('');
+                $('html, body').animate({scrollTop:0}, 'slow');
             }).fail(function(jqXHR, textStatus) {
                 $("#error_ajax").html('Error de ejecución');
                 $("#error_ajax").css('display','block');

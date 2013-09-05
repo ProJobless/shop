@@ -659,12 +659,12 @@ class Dashboard extends CI_Controller {
 
     public function salir() {
 
-        $consulta_user = $this->db->get_where('usuario', array('secure_number' => $secure_number));
+        /*$consulta_user = $this->db->get_where('usuario', array('secure_number' => $secure_number));
         foreach ($consulta_user->result() as $user) {
 
             $this->db->where('idUsuario', $user->idUsuario);
             $this->db->update('usuario', array('secure_number' => NULL));
-        }
+        }*/
         $newdata = array(
             'secure_number' => NULL,
             'tienda' => NULL,

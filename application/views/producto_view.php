@@ -28,13 +28,13 @@ $this->load->view('common/header',$data); ?>
     
     <?php foreach ($presentaciones as $p) { ?>
         
-            <div class='pull-left' style='width:45%;'>
+            <div class='pull-left cuadro_producto'>
                 <h5 class="green_text font_130">
                     <?php echo $p['estado_fisico']; ?><br />
                     <?php echo $p['contenido_neto']; ?>
                 </h5>
                 <center>
-                    <img width="176" height="176" alt="<?php echo $p['clave']; ?>" src="<?php echo base_url('img/' . $p['imagen']); ?>">
+                    <img width="176" height="176" alt="<?php echo $p['clave']; ?>" src="<?php echo base_url('productos_img/' . $p['imagen']); ?>">
                 </center>
                 <div class="cuadro_precio">
                         <strong style="margin-left:60px; margin-top:15px;">Precio:</strong> 

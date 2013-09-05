@@ -125,16 +125,6 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>bootstrap/js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="<?php echo base_url();?>js/autoNumeric-1.8.1.js" ></script>
-	<!--<script type="text/javascript" src="<?php echo base_url();?>js/ddsmoothmenu.js"></script> 
-	<script type="text/javascript">
-		ddsmoothmenu.init({
-			mainmenuid: "smoothmenu", //menu DIV id
-			orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
-			classname: 'ddsmoothmenu', //class added to menu's outer DIV
-			//customtheme: ["#1c5a80", "#18374a"],
-			contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
-		})
-	</script> -->
 	<script type="text/javascript">
 		function calculaPrecio(base,descuento,excepcion){
 			//alert(':)');
@@ -189,8 +179,6 @@
 			$(".numerico").autoNumeric({aSep: '', aDec: '.'});
 		});
 	</script>
-
-	<!--<script language="javascript" src="<?php echo base_url();?>js/WYSIWYG/source.js" type="text/javascript"></script>-->
 </head>
 <body>
 
@@ -202,7 +190,7 @@
 	?>
 	<div style="height: 110px;">
 		<div style="float:left; height: 100px;"><img src="<?php echo base_url();?>img/logo-tecno.gif" alt="<?php echo $nombre_tienda;?>" height="100"/></div>
-		<div id="logout" style="float:right;"><a href="<?php echo base_url();?>/admin/dashboard/salir">Salir</a></div>
+		<div id="logout" style="float:right;"><a href="<?php echo site_url('/admin/dashboard/salir');?>">Salir</a></div>
 	</div>
 	<?php } ?>
 	<h1>Panel de Administración  <?php  if($seccion != 'inicio_login') { echo "de ".$nombre_tienda; }?></h1>

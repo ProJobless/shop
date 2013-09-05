@@ -53,9 +53,10 @@ class Tienda extends CI_Controller {
     }
 
     public function index() {
-        $data['global_config'] = $this->tienda->config_inicial();
+        /*$data['global_config'] = $this->tienda->config_inicial();
         
-        $this->load->view('tienda_view', $data);
+        $this->load->view('tienda_view', $data);*/
+        redirect('tienda/categoria/38');
     }
 
     public function categoria($idcategoria = 0) {

@@ -69,7 +69,7 @@
                         <td><?php echo $c['abreviatura'].''.$c['idCliente'];?></td>
                         <td><?php echo $c['contrasena'];?></td>
                         <td><?php echo $c['fecha'];?></td>
-                        <td><a href='<?php echo site_url('cliente/editar/'.$c['idCliente']);?>' >Editar</a></td>
+                        <td><a href='<?php echo site_url('admin/cliente/editar/'.$c['idCliente']);?>' >Editar</a></td>
                         <td>
                             <center>
                             <button class="btn btn-link estado" data-accion="<?php echo ($c['activo'] == 'SI') ? 'NO' : 'SI';?>" data-id="<?php echo $c['idCliente'];?>">
@@ -266,7 +266,7 @@
             <?php
             }elseif($seccion == 'editar'){
                 $c = $cliente;?>
-                <a href="<?php echo site_url('cliente/lista');?>" class='btn btn-small pull-left'> <i class='icon icon-chevron-left'></i> Regresar a Listado </a>
+                <a href="<?php echo site_url('admin/cliente/lista');?>" class='btn btn-small pull-left'> <i class='icon icon-chevron-left'></i> Regresar a Listado </a>
                 <div class="clearfix"></div>
                 <h1>Edición de Clientes</h1>
                 <?php echo form_open(current_url());?>
@@ -366,7 +366,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a href="<?php echo site_url('cliente/alta');?>">
+                                    <a href="<?php echo site_url('admin/cliente/alta');?>">
                                         <img src="<?php echo base_url('img/icons/icono-cliente-nuevo.jpg');?>">
                                     </a>
                                 </td>
@@ -378,7 +378,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a href="<?php echo site_url('cliente/lista');?>">
+                                    <a href="<?php echo site_url('admin/cliente/lista');?>">
                                         <img src="<?php echo base_url('/img/icons/icono-cliente.jpg');?>">
                                     </a>
                                 </td>
