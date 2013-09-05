@@ -1,4 +1,4 @@
-﻿<?php $this->load->view('admin/common/header'); ?>
+<?php $this->load->view('admin/common/header');?>
 
 
 
@@ -56,7 +56,7 @@
                                     <td><?php echo $correo['nombre'];?></td>
                                     <td><?php echo $correo['direccion'];?></td>
                                     <td><?php echo $correo['seccion'];?></td>
-                                    <td><a href="<?php echo site_url('admin/correo/eliminar/'.$correo['idcorreo']);?>">Eliminar</a></td>
+                                    <td><a href="<?php echo site_url('correo/eliminar/'.$correo['idcorreo']);?>">Eliminar</a></td>
                                 </tr>
 			<?php
                             }

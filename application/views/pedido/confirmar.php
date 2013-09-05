@@ -163,8 +163,11 @@ $this->load->view('common/header', $data);
 
 <span id='load_pedido' class='pull-right'></span>
 <div class='clearfix'></div>
+<a href="<?php echo site_url('tienda/vaciar_carro');?>" class='btn' type="button" class='pull-left'>Cancelar</a>
 <div class='pull-right btn-group'>
-    <a href="<?php echo site_url('tienda/vaciar_carro');?>" class='btn' type="button">Cancelar</a>
+    
+    <a href='<?php echo site_url('pedido/previo');?>' class='btn btn'>Regresar</a>
+    <button id='' class='btn btn-info'>Imprimir Pedido</button>
     <button id='terminar' class='btn btn-success'>Continuar</button>
 
 </div>

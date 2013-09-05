@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/common/header');?>
+<?php $this->load->view('common/header');?>
 	<div class="menu"><?php construyeMenu($rol); ?></div>
 	<div id="body">
             <?php 
@@ -22,7 +22,7 @@
             ?>
             
             <h2>Subir Lista de nuevos precios </h2>
-            <?php echo form_open_multipart(site_url('admin/producto/subir_lista'));?>
+            <?php echo form_open_multipart(site_url('producto/subir_lista'));?>
 		<input class="btn input-small" type="file" name="archivo" />
                 <input class="btn btn-success" type="submit" value="Subir" />
             <?php echo form_close();?>
@@ -64,4 +64,4 @@
             }
             ?>
 	</div>
-<?php $this->load->view('admin/common/footer');?>
+<?php $this->load->view('common/footer');?>

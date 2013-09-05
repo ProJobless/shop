@@ -60,12 +60,15 @@ $subtotal = $this->carro->get_subtotal();
     </tbody>
 </table>
 <br />
-<div class='btn-group'>
+
+
+<div class='btn-group pull-right'>
     
-    <a href="<?php echo site_url('tienda/vaciar_carro');?>" class='btn' type="button">Cancelar</a>
+    
     <?php
     $user = $this->phpsession->get('datos','usuario');
     if(!empty($user)){?>
+        <a href="<?php echo site_url('tienda/vaciar_carro');?>" class='btn pull-left' type="button">Cancelar</a>
         <a href="<?php echo site_url('pedido/confirmar');?>" class='btn btn-success' type="button">Continuar</a>
     <?php
     }else{?>

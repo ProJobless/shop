@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/common/header'); ?>
+<?php $this->load->view('admin/common/header');?>
 
 <div class="menu"><?php construyeMenu($rol); ?></div>
 	<div id="body">
@@ -39,9 +39,11 @@
                     <p>Error al ejecutar la búsqueda. Contacte a su administrador.</p>
                 </div>
                 <div class="alert alert-error" id="error_estado" style="display:none;">
-                    <p>Ha habido un problema al activar/desactivar el cliente. Contacte a su administrador.</p>
+                    <p>Ha ocurrido un problema al activar/desactivar el cliente. Contacte a su administrador.</p>
                 </div>
-            
+				<center>
+					<button onclick="window.open('<?php echo site_url('admin/tienda/cliente/excel');?>','newwindow','width=400,height=200');">Exportar Listado de Clientes</button>
+					</center>
                 <div class="input-append pull-right">
                     <input type="text" placeholder="Nombre" id="busqueda">
                     <button type="button" class="btn" id="buscar"><i class="icon icon-search"></i> Buscar </button>
@@ -67,7 +69,7 @@
                         <td><?php echo $c['abreviatura'].''.$c['idCliente'];?></td>
                         <td><?php echo $c['contrasena'];?></td>
                         <td><?php echo $c['fecha'];?></td>
-                        <td><a href='<?php echo site_url('admin/cliente/editar/'.$c['idCliente']);?>' >Editar</a></td>
+                        <td><a href='<?php echo site_url('cliente/editar/'.$c['idCliente']);?>' >Editar</a></td>
                         <td>
                             <center>
                             <button class="btn btn-link estado" data-accion="<?php echo ($c['activo'] == 'SI') ? 'NO' : 'SI';?>" data-id="<?php echo $c['idCliente'];?>">
@@ -75,7 +77,7 @@
                                     <i class="icon icon-certificate icon-white"></i>
                                 </span>
                             </button>
-                            <span style="display:none;" id="load<?php echo $c['idCliente'];?>"><img src="<?php echo base_url('/img/load_small.gif');?>"></span>
+                            <span style="display:none;" id="load<?php echo $c['idCliente'];?>"><img src="<?php echo base_url('img/load_small.gif');?>"></span>
                             </center>
                         </td>
                     </tr>
@@ -91,13 +93,13 @@
 
                         $('#buscar').click(function(){
 
-                            $("#results").html('<center><img src="<?php echo base_url('admin/img/cargando.gif');?>" alt="Cargando..." /><center>');
+                            $("#results").html('<center><img src="<?php echo base_url('img/cargando.gif');?>" alt="Cargando..." /><center>');
                             var busqueda = $('#busqueda').val();
                             if(busqueda != ''){
 
                                 $.ajax({
                                     type: "POST",
-                                    url: "<?php echo base_url('admin/cliente/buscar');?>",
+                                    url: "<?php echo site_url('admin/cliente/buscar');?>",
                                     cache: false,
                                     data: {buscar: busqueda}
                                 }).done(function( html ) {
@@ -264,7 +266,7 @@
             <?php
             }elseif($seccion == 'editar'){
                 $c = $cliente;?>
-                <a href="<?php echo site_url('admin/cliente/lista');?>" class='btn btn-small pull-left'> <i class='icon icon-chevron-left'></i> Regresar a Listado </a>
+                <a href="<?php echo site_url('cliente/lista');?>" class='btn btn-small pull-left'> <i class='icon icon-chevron-left'></i> Regresar a Listado </a>
                 <div class="clearfix"></div>
                 <h1>Edición de Clientes</h1>
                 <?php echo form_open(current_url());?>
@@ -364,8 +366,8 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a href="<?php echo site_url('admin/cliente/alta');?>">
-                                        <img src="<?php echo base_url('/img/icons/icono-cliente-nuevo.jpg');?>">
+                                    <a href="<?php echo site_url('cliente/alta');?>">
+                                        <img src="<?php echo base_url('img/icons/icono-cliente-nuevo.jpg');?>">
                                     </a>
                                 </td>
                             </tr>
@@ -376,8 +378,8 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a href="<?php echo site_url('admin/cliente/lista');?>">
-                                        <img src="<?php echo base_url('//img/icons/icono-cliente.jpg');?>">
+                                    <a href="<?php echo site_url('cliente/lista');?>">
+                                        <img src="<?php echo base_url('/img/icons/icono-cliente.jpg');?>">
                                     </a>
                                 </td>
                             </tr>

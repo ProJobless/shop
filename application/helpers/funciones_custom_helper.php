@@ -1190,52 +1190,21 @@ function calcula_dias($fecha_uno,$fecha_dos){
 function construyeMenu($rol){
 	switch("$rol"){
 		case 'ADMINISTRADOR':?>
-		<!--
-		<div id="smoothmenu" class="ddsmoothmenu">
-					<ul >
-						<li><a href="<?php echo base_url('admin');?>/dashboard/inicio/">Administrador</a>
-							<ul>
-								<li><a href="<?php echo base_url('admin');?>/dashboard/usuario">Usuarios</a></li>
-								<li><a href="<?php echo site_url('admin/dashboard/tipo_cambio');?>">Tipo de Cambio</a></li>
-								<li><a href="<?php echo base_url('admin');?>/dashboard/tipo_cliente">Tipos de Cliente</a></li>
-							</ul>
-						</li>
-						<li><a href="<?php echo base_url('admin');?>/tienda/inicio/"> Tienda</a>
-							<ul>
-								<li><a href="<?php echo base_url('admin');?>/tienda/categoria/">Categorias</a></li>
-								<li><a href="<?php echo base_url('admin');?>/tienda/producto/">Productos</a></li>
-								<li><a href="<?php echo base_url('admin');?>/tienda/cliente/">Clientes</a></li>
-							</ul>
-						</li>
-						<li><a href="<?php echo site_url('admin/pedido/inicio');?>">Pedidos</a>
-							<ul>
-								<li><a href="<?php echo site_url('admin/pedido/recibido');?>">Recibidos</a></li>
-								<li><a href="<?php echo site_url('admin/pedido/proceso');?>">En proceso</a></li>
-								<li><a href="<?php echo site_url('admin/pedido/surtido');?>">Surtidos</a></li>
-								<li><a href="<?php echo site_url('admin/pedido/antiguo');?>">Históricos</a></li>
-							</ul>
-						</li>
-						<li><a href="#N">Reportes</a>
-						</li>
-						<li><a href="#N">Herramientas</a>
-						</li>
-					</ul>
-		</div>
-		-->
+		
 		<ul id="nav">
-			<li><a href="<?php echo base_url('admin');?>/dashboard/inicio/">Administrador</a>
+			<li><a href="<?php echo site_url('admin/dashboard/inicio/');?>">Administrador</a>
 				<ul>
-					<li><a href="<?php echo base_url('admin');?>/dashboard/usuario">Usuarios</a></li>
+					<li><a href="<?php echo site_url('admin');?>/dashboard/usuario">Usuarios</a></li>
 					<li><a href="<?php echo site_url('admin/dashboard/tipo_cambio');?>">Tipo de Cambio</a></li>
-					<li><a href="<?php echo base_url('admin');?>/dashboard/tipo_cliente">Tipos de Cliente</a></li>
+					<li><a href="<?php echo site_url('admin/dashboard/tipo_cliente');?>">Tipos de Cliente</a></li>
 					<li><a href="<?php echo site_url('admin/surtidor/editar');?>">Surtidores</a></li>
 					<li><a href="<?php echo site_url('admin/correo/alta');?>">Correos</a></li>
 				</ul>
 			</li>
-			<li><a href="<?php echo base_url('admin');?>/tienda/inicio/"> Tienda</a>
+			<li><a href="<?php echo site_url('admin/tienda/inicio/');?>"> Tienda</a>
 				<ul>
-					<li><a href="<?php echo base_url('admin');?>/tienda/categoria/">Categorias</a></li>
-					<li><a href="<?php echo base_url('admin');?>/tienda/producto/">Productos</a></li>
+					<li><a href="<?php echo site_url('admin/tienda/categoria/');?>">Categorias</a></li>
+					<li><a href="<?php echo site_url('admin/tienda/producto/');?>">Productos</a></li>
 					<li><a href="<?php echo site_url('admin/cliente');?>">Clientes</a></li>
 				</ul>
 			</li>
@@ -1262,24 +1231,13 @@ function construyeMenu($rol){
 		case 'PRODUCTO_INFORMACION_GENERAL':
 		case 'PRODUCTO_INFORMACION_INGREDIENTES':
 		case 'PRODUCTO_PRECIO':
-		case 'PRODUCTO_VIDEO':?>
-		<!--<div id="smoothmenu" class="ddsmoothmenu">
-					<ul >
-						<li><a href="<?php echo base_url('admin');?>/dashboard/inicio/">Inicio</a>
-						</li>
-						<li><a href="<?php echo base_url('admin');?>/tienda/inicio/"> Tienda</a>
-							<ul>
-								<li><a href="<?php echo base_url('admin');?>/tienda/producto/">Productos</a></li>
-							</ul>
-						</li>
-					</ul>
-		</div> -->  
+		case 'PRODUCTO_VIDEO':?> 
 		<ul id="nav">
-			<li><a href="<?php echo base_url('admin');?>/dashboard/inicio/">Inicio</a>
+			<li><a href="<?php echo site_url('admin/dashboard/inicio/');?>">Inicio</a>
 			</li>
-			<li><a href="<?php echo base_url('admin');?>/tienda/inicio/"> Tienda</a>
+			<li><a href="<?php echo site_url('admin/tienda/inicio/');?>"> Tienda</a>
 				<ul>
-					<li><a href="<?php echo base_url('admin');?>/tienda/producto/">Productos</a></li>
+					<li><a href="<?php echo site_url('admin/tienda/producto/');?>">Productos</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -1288,11 +1246,11 @@ function construyeMenu($rol){
 		case 'PEDIDOS_REPRESENTANTE_VENTAS':
 		case 'PEDIDOS_CATALOGO':
 		case 'PEDIDOS_REPRESENTANTE_EMBARQUES':?>
-		<!--div id="smoothmenu" class="ddsmoothmenu"-->
+		
 					<ul id="nav">
-						<li><a href="<?php echo base_url('admin');?>/dashboard/inicio/">Inicio</a>
+						<li><a href="<?php echo site_url('admin/dashboard/inicio/');?>">Inicio</a>
 						</li>
-						<li><a href="<?php echo base_url('admin');?>/tienda/inicio/"> Pedidos</a>
+						<li><a href="<?php echo site_url('admin/tienda/inicio/');?>"> Pedidos</a>
 							<ul>
 								<li><a href="<?php echo site_url('admin/pedido/recibido');?>">Recibidos</a></li>
 								<li><a href="<?php echo site_url('admin/pedido/proceso');?>">En proceso</a></li>
@@ -1300,7 +1258,6 @@ function construyeMenu($rol){
 							</ul>
 						</li>
 					</ul>
-		<!--/div--> 
 		<?php 
 		break;
 
@@ -1437,8 +1394,8 @@ function construyeMenuAltas($seccion,$rol){
 			<h2>Altas</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/tienda/categoria/alta"><img src="<?php echo base_url();?>/img/icons/icono-categoria-nuevo.jpg" /></a></td>
-					<td><a href="<?php echo base_url('admin');?>/tienda/subcategoria/alta"><img src="<?php echo base_url();?>/img/icons/icono-subcategoria-nuevo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin/tienda/categoria/alta');?>"><img src="<?php echo base_url();?>/img/icons/icono-categoria-nuevo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin/tienda/subcategoria/alta');?>"><img src="<?php echo base_url();?>/img/icons/icono-subcategoria-nuevo.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1456,8 +1413,8 @@ function construyeMenuAltas($seccion,$rol){
 			<h2>Altas</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/tienda/producto/alta"><img src="<?php echo base_url();?>/img/icons/icono-producto-nuevo.jpg" /></a></td>
-					<td><a href="<?php echo base_url('admin');?>/tienda/presentacion/alta"><img src="<?php echo base_url();?>/img/icons/icono-presentacion-nuevo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/producto/alta"><img src="<?php echo base_url();?>/img/icons/icono-producto-nuevo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/presentacion/alta"><img src="<?php echo base_url();?>/img/icons/icono-presentacion-nuevo.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1473,7 +1430,7 @@ function construyeMenuAltas($seccion,$rol){
 			<h2>Altas</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/tienda/cliente/alta"><img src="<?php echo base_url();?>/img/icons/icono-cliente-nuevo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/cliente/alta"><img src="<?php echo base_url();?>/img/icons/icono-cliente-nuevo.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1488,7 +1445,7 @@ function construyeMenuAltas($seccion,$rol){
 			<h2>Altas</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/dashboard/tipo_cliente/alta"><img src="<?php echo base_url();?>/img/icons/icono-tipo_cliente-nuevo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/dashboard/tipo_cliente/alta"><img src="<?php echo base_url();?>/img/icons/icono-tipo_cliente-nuevo.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1503,7 +1460,7 @@ function construyeMenuAltas($seccion,$rol){
 			<h2>Altas</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/dashboard/usuario/alta"><img src="<?php echo base_url();?>/img/icons/icono-usuario-nuevo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/dashboard/usuario/alta"><img src="<?php echo base_url();?>/img/icons/icono-usuario-nuevo.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1529,8 +1486,8 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/tienda/categoria/consulta"><img src="<?php echo base_url();?>/img/icons/icono-categoria.jpg" /></a></td>
-					<td><a href="<?php echo base_url('admin');?>/tienda/subcategoria/consulta"><img src="<?php echo base_url();?>/img/icons/icono-subcategoria.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/categoria/consulta"><img src="<?php echo base_url();?>/img/icons/icono-categoria.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/subcategoria/consulta"><img src="<?php echo base_url();?>/img/icons/icono-subcategoria.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1546,9 +1503,9 @@ function construyeMenuConsultas($seccion,$rol){
                             <h2>Consultas & Actualizaciones</h2>
                             <table align="center" width="70%">
                                     <tr>
-                                            <td><a href="<?php echo base_url('admin');?>/tienda/producto/consulta"><img src="<?php echo base_url();?>/img/icons/icono-producto.jpg" /></a></td>
-                                            <td><a href="<?php echo base_url('admin');?>/tienda/presentacion/consulta"><img src="<?php echo base_url();?>/img/icons/icono-presentacion.jpg" /></a></td>
-                                            <td><a class="btn btn-small btn-primary" href="<?php echo base_url('admin');?>/producto/lista">Actualizar precios de presentaciones</a></td>
+                                            <td><a href="<?php echo site_url('admin');?>/tienda/producto/consulta"><img src="<?php echo base_url();?>/img/icons/icono-producto.jpg" /></a></td>
+                                            <td><a href="<?php echo site_url('admin');?>/tienda/presentacion/consulta"><img src="<?php echo base_url();?>/img/icons/icono-presentacion.jpg" /></a></td>
+                                            <td><a class="btn btn-small btn-primary" href="<?php echo site_url('admin');?>/producto/lista">Actualizar precios de presentaciones</a></td>
                                     </tr>
                             </table>
 			<?php
@@ -1561,8 +1518,8 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/tienda/producto/consulta"><img src="<?php echo base_url();?>/img/icons/icono-producto.jpg" /></a></td>
-					<td><a href="<?php echo base_url('admin');?>/tienda/presentacion/consulta"><img src="<?php echo base_url();?>/img/icons/icono-presentacion.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/producto/consulta"><img src="<?php echo base_url();?>/img/icons/icono-producto.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/presentacion/consulta"><img src="<?php echo base_url();?>/img/icons/icono-presentacion.jpg" /></a></td>
 					
 				</tr>
 			</table>
@@ -1579,7 +1536,7 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/tienda/cliente/consulta"><img src="<?php echo base_url();?>/img/icons/icono-cliente.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/cliente/consulta"><img src="<?php echo base_url();?>/img/icons/icono-cliente.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1594,7 +1551,7 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/dashboard/tipo_cliente/consulta"><img src="<?php echo base_url();?>/img/icons/icono-tipo_cliente.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/dashboard/tipo_cliente/consulta"><img src="<?php echo base_url();?>/img/icons/icono-tipo_cliente.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1609,7 +1566,7 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/dashboard/usuario/consulta"><img src="<?php echo base_url();?>/img/icons/icono-usuario.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/dashboard/usuario/consulta"><img src="<?php echo base_url();?>/img/icons/icono-usuario.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1625,9 +1582,9 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones | Pedidos Recibidos</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/pedido/todos"><img src="<?php echo base_url();?>/img/icons/icono-pedido_todos.jpg" alt="TODOS"/></a></td>
-					<td><a href="<?php echo base_url('admin');?>/pedido/recibido/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
-					<td><a href="<?php echo base_url('admin');?>/pedido/recibido/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/todos"><img src="<?php echo base_url();?>/img/icons/icono-pedido_todos.jpg" alt="TODOS"/></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/recibido/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/recibido/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1636,7 +1593,7 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones | Pedidos Recibidos</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/pedido/recibido/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/recibido/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1646,7 +1603,7 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones | Pedidos Recibidos</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/pedido/recibido/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/recibido/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1663,9 +1620,9 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones | Pedidos en Proceso</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/pedido/todos"><img src="<?php echo base_url();?>/img/icons/icono-pedido_todos.jpg" alt="TODOS"/></a></td>
-					<td><a href="<?php echo base_url('admin');?>/pedido/proceso/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
-					<td><a href="<?php echo base_url('admin');?>/pedido/proceso/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/todos"><img src="<?php echo base_url();?>/img/icons/icono-pedido_todos.jpg" alt="TODOS"/></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/proceso/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/proceso/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1674,7 +1631,7 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones | Pedidos Recibidos</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/pedido/proceso/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/proceso/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1684,7 +1641,7 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones | Pedidos Recibidos</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/pedido/proceso/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/proceso/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1699,9 +1656,9 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones | Pedidos Surtidos</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/pedido/todos"><img src="<?php echo base_url();?>/img/icons/icono-pedido_todos.jpg" alt="TODOS"/></a></td>
-					<td><a href="<?php echo base_url('admin');?>/pedido/surtido/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
-					<td><a href="<?php echo base_url('admin');?>/pedido/surtido/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/todos"><img src="<?php echo base_url();?>/img/icons/icono-pedido_todos.jpg" alt="TODOS"/></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/surtido/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/surtido/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1710,7 +1667,7 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones | Pedidos Recibidos</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/pedido/surtido/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/surtido/catalogo"><img src="<?php echo base_url();?>/img/icons/icono-pedido_catalogo.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -1720,7 +1677,7 @@ function construyeMenuConsultas($seccion,$rol){
 			<h2>Consultas & Actualizaciones | Pedidos Recibidos</h2>
 			<table align="center" width="70%">
 				<tr>
-					<td><a href="<?php echo base_url('admin');?>/pedido/surtido/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/surtido/representante"><img src="<?php echo base_url();?>/img/icons/icono-pedido_representantes.jpg" /></a></td>
 				</tr>
 			</table>
 			<?php
@@ -2357,7 +2314,7 @@ function construyeFormularioEdicion($seccion,$rol,$consulta,$idioma = false){
 				</table>
 				<input type="hidden" value="<?php echo $tipo_cliente->idTipoCliente;?>" name="actualiza_id" />
 				<?php echo form_close();?>
-				<center><a href="<?php echo base_url('admin');?>//dashboard/tipo_cliente/consulta">Regresar</a></center>
+				<center><a href="<?php echo site_url('admin');?>//dashboard/tipo_cliente/consulta">Regresar</a></center>
 				<?php
 				}
 				break;
@@ -2386,7 +2343,7 @@ function construyeFormularioEdicion($seccion,$rol,$consulta,$idioma = false){
 						</tr>
 					</table>
 					<?php echo form_close();?>
-					<center><a href="<?php echo base_url('admin');?>//tienda/categoria/consulta">Regresar</a></center>
+					<center><a href="<?php echo site_url('admin');?>//tienda/categoria/consulta">Regresar</a></center>
 				<?php
 				}
 				break;
@@ -2419,7 +2376,7 @@ function construyeFormularioEdicion($seccion,$rol,$consulta,$idioma = false){
 				</table>
 				<input type="hidden" value="<?php echo $usuario->idUsuario;?>" name="actualiza_id" />
 				<?php echo form_close();?>
-				<center><a href="<?php echo base_url('admin');?>//dashboard/usuario/consulta">Regresar</a></center>
+				<center><a href="<?php echo site_url('admin');?>//dashboard/usuario/consulta">Regresar</a></center>
 				<?php
 				}
 				break;
@@ -2460,7 +2417,7 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 					<td><?php echo $pedido->idPedido;?></td>
 					<td><?php echo $pedido->nombre;?> <?php echo $pedido->apellido;?></td>
 					<td><?php echo $pedido->fecha_pedido;?></td>			
-					<td><a href="<?php echo base_url('admin');?>/pedido/recibido/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/recibido/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
 					<td><a href="<?php echo site_url('admin/pedido/recibido/estado');?>/<?php echo $pedido->idPedido;?>"><?php echo $estado;?></a></td>
 					<td><button onclick="window.open('<?php echo site_url('admin/pedido/excel/'.$pedido->idPedido);?>','newwindow','width=400,height=200');">Exportar</button></td>
 				</tr>
@@ -2496,7 +2453,7 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 					<td><?php echo $pedido->idPedido;?></td>
 					<td><?php echo $pedido->nombre;?> <?php echo $pedido->apellido;?></td>
 					<td><?php echo $pedido->fecha_pedido;?></td>			
-					<td><a href="<?php echo base_url('admin');?>/pedido/proceso/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/proceso/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
 					<td><a href="<?php echo site_url('admin/pedido/proceso/estado');?>/<?php echo $pedido->idPedido;?>"><?php echo $estado;?></a></td>
 					<td><button onclick="window.open('<?php echo site_url('admin/pedido/excel/'.$pedido->idPedido);?>','newwindow','width=400,height=200');">Exportar</button></td>
 				</tr>
@@ -2526,7 +2483,7 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 					<td><?php echo $pedido->idPedido;?></td>
 					<td><?php echo $pedido->nombre;?> <?php echo $pedido->apellido;?></td>
 					<td><?php echo $pedido->fecha_pedido;?></td>			
-					<td><a href="<?php echo base_url('admin');?>/pedido/antiguo/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/antiguo/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
 				</tr>
 				<?php } ?>
 			</table>
@@ -2560,7 +2517,7 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 					<td><?php echo $pedido->idPedido;?></td>
 					<td><?php echo $pedido->nombre;?> <?php echo $pedido->apellido;?></td>
 					<td><?php echo $pedido->fecha_pedido;?></td>			
-					<td><a href="<?php echo base_url('admin');?>/pedido/surtido/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/surtido/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
 					<td><a href="<?php echo site_url('admin/pedido/surtido/estado');?>/<?php echo $pedido->idPedido;?>"><?php echo $estado;?></a></td>
 					<td><button onclick="window.open('<?php echo site_url('admin/pedido/excel/'.$pedido->idPedido);?>','newwindow','width=400,height=200');">Exportar</button></td>
 				</tr>
@@ -2595,7 +2552,7 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 					<td><?php echo $pedido->idPedido;?></td>
 					<td><?php echo $pedido->nombre;?> <?php echo $pedido->apellido;?></td>
 					<td><?php echo $pedido->fecha_pedido;?></td>			
-					<td><a href="<?php echo base_url('admin');?>/pedido/surtido/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
+					<td><a href="<?php echo site_url('admin');?>/pedido/surtido/ver/<?php echo $pedido->idPedido;?>">Ver</a></td>
 					<td><a href="<?php echo site_url('admin/pedido/surtido/estado');?>/<?php echo $pedido->idPedido;?>"><?php echo $estado;?></a></td>
 					<td><button onclick="window.open('<?php echo site_url('admin/pedido/excel/'.$pedido->idPedido);?>','newwindow','width=400,height=200');">Exportar</button></td>
 				</tr>
@@ -2634,12 +2591,12 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 								//echo $tipoCliente->precio_cliente;
 							}?></td>
 							<?php $url_nombre = url_title($tipoCliente->nombre, 'underscore', TRUE); ?>
-				<td><a href="<?php echo base_url('admin');?>/dashboard/tipo_cliente/ver/<?php echo $tipoCliente->idTipoCliente;?>">Ver</a>|<a href="<?php echo base_url('admin');?>/dashboard/tipo_cliente/editar/<?php echo $tipoCliente->idTipoCliente;?>">Editar</a></td>
+				<td><a href="<?php echo site_url('admin');?>/dashboard/tipo_cliente/ver/<?php echo $tipoCliente->idTipoCliente;?>">Ver</a>|<a href="<?php echo site_url('admin');?>/dashboard/tipo_cliente/editar/<?php echo $tipoCliente->idTipoCliente;?>">Editar</a></td>
 				<?php if($tipoCliente->idTipoCliente == 3){?>
 				<td><?php echo $tipoCliente->activo;?></td>
 				<?php
 				}else{?>
-				<td><a href="<?php echo base_url('admin');?>/dashboard/tipo_cliente/<?php echo $activo_accion;?>/<?php echo $tipoCliente->idTipoCliente;?>"><?php echo $tipoCliente->activo;?></a></td>
+				<td><a href="<?php echo site_url('admin');?>/dashboard/tipo_cliente/<?php echo $activo_accion;?>/<?php echo $tipoCliente->idTipoCliente;?>"><?php echo $tipoCliente->activo;?></a></td>
 				<?php
 				}?>
 				
@@ -2672,14 +2629,14 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 				<td><?php echo $usuario->descripcion;?></td>
 				<td><?php echo $usuario->pass;?></td>
 				<?php if(($usuario->secure_number != NULL)){?>
-						<td style="border: #00A619 solid 1px;"><a href="<?php echo base_url('admin');?>/dashboard/terminar_sesion/<?php echo $usuario->secure_number;?>">Iniciada</a></td>
+						<td style="border: #00A619 solid 1px;"><a href="<?php echo site_url('admin');?>/dashboard/terminar_sesion/<?php echo $usuario->secure_number;?>">Iniciada</a></td>
 						<?php
 						}else{ ?>
 							<td>Sin iniciar</td>
 						<?php }
 				?>
-				<td><a href="<?php echo base_url('admin');?>/dashboard/usuario/ver/<?php echo $usuario->idUsuario;?>">Ver</a>|<a href="<?php echo base_url('admin');?>/dashboard/usuario/editar/<?php echo $usuario->idUsuario;?>">Editar</a></td>
-				<td><a href="<?php echo base_url('admin');?>/dashboard/usuario/<?php echo $activo_accion;?>/<?php echo $usuario->idUsuario;?>"><?php echo $usuario->activo;?></a></td>
+				<td><a href="<?php echo site_url('admin');?>/dashboard/usuario/ver/<?php echo $usuario->idUsuario;?>">Ver</a>|<a href="<?php echo site_url('admin');?>/dashboard/usuario/editar/<?php echo $usuario->idUsuario;?>">Editar</a></td>
+				<td><a href="<?php echo site_url('admin');?>/dashboard/usuario/<?php echo $activo_accion;?>/<?php echo $usuario->idUsuario;?>"><?php echo $usuario->activo;?></a></td>
 				</tr>
 				<?php } ?>
 			</table>
@@ -2716,15 +2673,15 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 					<td><?php echo $cliente->abreviatura.''.$cliente->idCliente;?></td>
 					<td><?php echo $cliente->contrasena;?></td>
 					<?php if(($cliente->secure_number != NULL)){?>
-							<td style="border: #00A619 solid 1px;"><a href="<?php echo base_url('admin');?>/tienda/terminar_sesion/<?php echo $cliente->secure_number;?>">Iniciada</a></td>
+							<td style="border: #00A619 solid 1px;"><a href="<?php echo site_url('admin');?>/tienda/terminar_sesion/<?php echo $cliente->secure_number;?>">Iniciada</a></td>
 							<?php
 							}else{ ?>
 								<td>Sin iniciar</td>
 							<?php }
 					?>
 					<td><?php echo $cliente->fecha;?></td>
-					<td><a href="<?php echo base_url('admin');?>/tienda/cliente/ver/<?php echo $cliente->idCliente;?>">Ver</a>|<a href="<?php echo base_url('admin');?>/tienda/cliente/editar_general/<?php echo $cliente->idCliente;?>">Editar</a></td>
-					<td><a href="<?php echo base_url('admin');?>/tienda/cliente/<?php echo $activo_accion;?>/<?php echo $cliente->idCliente;?>"><?php echo $cliente->activo;?></a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/cliente/ver/<?php echo $cliente->idCliente;?>">Ver</a>|<a href="<?php echo site_url('admin');?>/tienda/cliente/editar_general/<?php echo $cliente->idCliente;?>">Editar</a></td>
+					<td><a href="<?php echo site_url('admin');?>/tienda/cliente/<?php echo $activo_accion;?>/<?php echo $cliente->idCliente;?>"><?php echo $cliente->activo;?></a></td>
 				</tr>
 				<?php } ?>
 			</table>
@@ -2748,9 +2705,9 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 				?>
 				<tr>
 				<td><?php echo $categoria->nombre;?></td>
-				<td><a href="<?php echo base_url('admin');?>/tienda/subcategoria/consulta/<?php echo $categoria->idCategoria;?>">Ver</a></td>
-				<td><a href="<?php echo base_url('admin');?>/tienda/categoria/editar/<?php echo $categoria->idCategoria;?>">Editar</a></td>
-				<td><a href="<?php echo base_url('admin');?>/tienda/categoria/<?php echo $activo_accion;?>/<?php echo $categoria->idCategoria;?>"><?php echo $categoria->activo;?></a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/subcategoria/consulta/<?php echo $categoria->idCategoria;?>">Ver</a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/categoria/editar/<?php echo $categoria->idCategoria;?>">Editar</a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/categoria/<?php echo $activo_accion;?>/<?php echo $categoria->idCategoria;?>"><?php echo $categoria->activo;?></a></td>
 				</tr>
 				<?php } ?>
 			</table>
@@ -2779,10 +2736,10 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 				<?php if ($idioma){ ?>
 				<td><?php echo $subcategoria->nombre_en;?></td>
 				<?php } ?>
-				<td><a href="<?php echo base_url('admin');?>/tienda/subcategoria/editar/<?php echo $subcategoria->idSubcategoria;?>">Editar</a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/subcategoria/editar/<?php echo $subcategoria->idSubcategoria;?>">Editar</a></td>
 				
 				<?php if($subcategoria->catactivo == 'SI'){ ?>
-				<td><a href="<?php echo base_url('admin');?>/tienda/subcategoria/<?php echo $activo_accion;?>/<?php echo $subcategoria->idSubcategoria;?>"><?php echo $subcategoria->activo;?></a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/subcategoria/<?php echo $activo_accion;?>/<?php echo $subcategoria->idSubcategoria;?>"><?php echo $subcategoria->activo;?></a></td>
 				<?php }else{ ?>
 				<td><?php echo $subcategoria->activo;?></td>
 				<?php } ?>
@@ -2818,9 +2775,9 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 						<td><?php echo $producto->catnombre;?></td>
 						<td><?php echo $producto->subcatnombre;?></td>
 						<td><?php echo $producto->nombre;?></td>
-						<td><a href="<?php echo base_url('admin');?>/tienda/presentacion/consulta/<?php echo $producto->idProducto;?>">Ver</a></td>
-						<td><a href="<?php echo base_url('admin');?>/tienda/producto/ver/<?php echo $producto->idProducto;?>">Ver</a>|<a href="<?php echo base_url('admin');?>/tienda/producto/editar/<?php echo $producto->idProducto;?>">Editar</a></td>
-						<td><a href="<?php echo base_url('admin');?>/tienda/producto/<?php echo $activo_accion;?>/<?php echo $producto->idProducto;?>"><?php echo $producto->produactivo;?></a></td>
+						<td><a href="<?php echo site_url('admin');?>/tienda/presentacion/consulta/<?php echo $producto->idProducto;?>">Ver</a></td>
+						<td><a href="<?php echo site_url('admin');?>/tienda/producto/ver/<?php echo $producto->idProducto;?>">Ver</a>|<a href="<?php echo site_url('admin');?>/tienda/producto/editar/<?php echo $producto->idProducto;?>">Editar</a></td>
+						<td><a href="<?php echo site_url('admin');?>/tienda/producto/<?php echo $activo_accion;?>/<?php echo $producto->idProducto;?>"><?php echo $producto->produactivo;?></a></td>
 						</tr>
 						<?php } ?>
 					</table>
@@ -2851,8 +2808,8 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 						<td><?php echo $producto->catnombre;?></td>
 						<td><?php echo $producto->subcatnombre;?></td>
 						<td><?php echo $producto->nombre;?></td>
-						<td><a href="<?php echo base_url('admin');?>/tienda/presentacion/consulta/<?php echo $producto->idProducto;?>">Ver</a></td>
-						<td><a href="<?php echo base_url('admin');?>/tienda/producto/ver/<?php echo $producto->idProducto;?>">Ver</a></td>
+						<td><a href="<?php echo site_url('admin');?>/tienda/presentacion/consulta/<?php echo $producto->idProducto;?>">Ver</a></td>
+						<td><a href="<?php echo site_url('admin');?>/tienda/producto/ver/<?php echo $producto->idProducto;?>">Ver</a></td>
 						<?php } ?>
 					</table>
 				<?php
@@ -2907,9 +2864,9 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 				<td><?php echo $presentacion->contenido_neto;?></td>
 				<td><?php echo $iva_mostrar;?></td>
 				<td><?php echo $presentacion->precio_publico;?></td>
-				<td><a href="<?php echo base_url('admin');?>/tienda/presentacion/promocion/<?php echo $presentacion->idPresentacion;?>">Ver</a></td>
-				<td><a href="<?php echo base_url('admin');?>/tienda/presentacion/ver/<?php echo $presentacion->idPresentacion;?>">Ver</a>|<a href="<?php echo base_url('admin');?>/tienda/presentacion/editar/<?php echo $presentacion->idPresentacion;?>">Editar</a></td>
-				<td><a href="<?php echo base_url('admin');?>/tienda/presentacion/<?php echo $activo_accion;?>/<?php echo $presentacion->idPresentacion;?>"><?php echo $presentacion->activo;?></a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/presentacion/promocion/<?php echo $presentacion->idPresentacion;?>">Ver</a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/presentacion/ver/<?php echo $presentacion->idPresentacion;?>">Ver</a>|<a href="<?php echo site_url('admin');?>/tienda/presentacion/editar/<?php echo $presentacion->idPresentacion;?>">Editar</a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/presentacion/<?php echo $activo_accion;?>/<?php echo $presentacion->idPresentacion;?>"><?php echo $presentacion->activo;?></a></td>
 				</tr>
 				<?php } ?>
 			</table>
@@ -2960,8 +2917,8 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 				<td><?php echo $presentacion->contenido_neto;?></td>
 				<td><?php echo $iva_mostrar;?></td>
 				<td><?php echo $presentacion->precio_publico;?></td>
-				<td><a href="<?php echo base_url('admin');?>/tienda/promocion/consulta/<?php echo $presentacion->idPresentacion;?>">Ver</a></td>
-				<td><a href="<?php echo base_url('admin');?>/tienda/presentacion/ver/<?php echo $presentacion->idPresentacion;?>">Ver</a>|<a href="<?php echo base_url('admin');?>/tienda/presentacion/editar/<?php echo $presentacion->idPresentacion;?>">Editar</a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/promocion/consulta/<?php echo $presentacion->idPresentacion;?>">Ver</a></td>
+				<td><a href="<?php echo site_url('admin');?>/tienda/presentacion/ver/<?php echo $presentacion->idPresentacion;?>">Ver</a>|<a href="<?php echo site_url('admin');?>/tienda/presentacion/editar/<?php echo $presentacion->idPresentacion;?>">Editar</a></td>
 				</tr>
 				<?php } ?>
 			</table>
@@ -3064,7 +3021,7 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 			</table>
 			<center>
 			<?php $url_nombre = url_title($tipo_cliente->nombre, 'underscore', TRUE); ?>
-			<a href="<?php echo base_url('admin');?>//dashboard/tipo_cliente/consulta">Regresar</a> | <a href="<?php echo base_url('admin');?>/dashboard/tipo_cliente/editar/<?php echo $tipo_cliente->idTipoCliente;?>">Editar</a> 
+			<a href="<?php echo site_url('admin');?>//dashboard/tipo_cliente/consulta">Regresar</a> | <a href="<?php echo site_url('admin');?>/dashboard/tipo_cliente/editar/<?php echo $tipo_cliente->idTipoCliente;?>">Editar</a> 
 			</center>
 		<?php
 		}
@@ -3092,7 +3049,7 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 				</tr>
 			</table>
 			<center>
-			<a href="<?php echo base_url('admin');?>//dashboard/usuario/consulta">Regresar</a> | <a href="<?php echo base_url('admin');?>/dashboard/usuario/editar/<?php echo $usuario->idUsuario;?>">Editar</a> 
+			<a href="<?php echo site_url('admin');?>//dashboard/usuario/consulta">Regresar</a> | <a href="<?php echo site_url('admin');?>/dashboard/usuario/editar/<?php echo $usuario->idUsuario;?>">Editar</a> 
 			</center>
 		<?php
 		}
@@ -3146,11 +3103,11 @@ function consultaInformacion($seccion,$rol,$consulta,$idioma=false){
 				case 'PRODUCTO_INFORMACION_GENERAL':
 				case 'ADMINISTRADOR':?>
 			
-			<a href="<?php echo base_url('admin');?>//tienda/producto/consulta">Regresar</a> | <a href="<?php echo base_url('admin');?>/tienda/producto/editar/<?php echo $producto->idProducto;?>">Editar</a> 
+			<a href="<?php echo site_url('admin');?>//tienda/producto/consulta">Regresar</a> | <a href="<?php echo site_url('admin');?>/tienda/producto/editar/<?php echo $producto->idProducto;?>">Editar</a> 
 			
 			<?php break;
 				default:?>
-					<a href="<?php echo base_url('admin');?>//tienda/producto/consulta">Regresar</a>
+					<a href="<?php echo site_url('admin');?>//tienda/producto/consulta">Regresar</a>
 				<?php
 				break;
 			} ?>
@@ -3550,7 +3507,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 						</tr>
 					</table>
 					<?php echo form_close();?>
-					<center><a href="<?php echo base_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
+					<center><a href="<?php echo site_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
 				<?php
 					}
 				break;
@@ -3610,7 +3567,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 						</tr>
 					</table>
 					<?php echo form_close();?>
-					<center><a href="<?php echo base_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
+					<center><a href="<?php echo site_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
 				<?php
 					}
 				break;
@@ -3630,7 +3587,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 						</tr>
 					</table>
 					<?php echo form_close();?>
-					<center><a href="<?php echo base_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
+					<center><a href="<?php echo site_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
 				<?php
 					}
 				break;
@@ -3712,7 +3669,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 						</tr>
 					</table>
 					<?php echo form_close();?>
-					<center><a href="<?php echo base_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
+					<center><a href="<?php echo site_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
 				<?php
 					}
 				break;
@@ -3760,7 +3717,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 						</tr>
 					</table>
 					<?php echo form_close();?>
-					<center><a href="<?php echo base_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
+					<center><a href="<?php echo site_url('admin');?>/tienda/presentacion/consulta">Regresar</a></center>
 				<?php
 					}
 				break;
@@ -3846,7 +3803,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 					</tr>
 				</table>
 				<center>
-					<a href="<?php echo base_url('admin');?>//tienda/presentacion/consulta">Regresar</a> | <a href="<?php echo base_url('admin');?>/tienda/presentacion/editar/<?php echo $presentacion->idPresentacion;?>">Editar</a> 
+					<a href="<?php echo site_url('admin');?>//tienda/presentacion/consulta">Regresar</a> | <a href="<?php echo site_url('admin');?>/tienda/presentacion/editar/<?php echo $presentacion->idPresentacion;?>">Editar</a> 
 				</center>
 				<?php
 					}
@@ -3915,7 +3872,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 						</tr>
 					</table>	
 				<?php echo form_close();?>
-					<center><a href="<?php echo base_url('admin');?>/tienda/producto/consulta">Regresar</a></center>
+					<center><a href="<?php echo site_url('admin');?>/tienda/producto/consulta">Regresar</a></center>
 				<?php 
 
 				} 
@@ -3959,7 +3916,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 						</tr>
 					</table>
 					<?php echo form_close();?>
-					<center><a href="<?php echo base_url('admin');?>//tienda/categoria/consulta">Regresar</a></center>
+					<center><a href="<?php echo site_url('admin');?>//tienda/categoria/consulta">Regresar</a></center>
 				<?php
 				}
 			break;
@@ -4084,7 +4041,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 					</table>
 				<?php } ?>
 				<center>
-				<a href="<?php echo base_url('admin');?>//tienda/cliente/consulta">Regresar</a> | <a href="<?php echo base_url('admin');?>/tienda/cliente/editar_general/<?php echo $consultaTres;?>">Editar</a> 
+				<a href="<?php echo site_url('admin');?>//tienda/cliente/consulta">Regresar</a> | <a href="<?php echo site_url('admin');?>/tienda/cliente/editar_general/<?php echo $consultaTres;?>">Editar</a> 
 				</center>
 			<?php
 			break;
@@ -4293,7 +4250,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
                     <?php } ?>
 					<?php echo form_close();?>
                 <center>
-                <a href="<?php echo base_url('admin');?>//tienda/cliente/consulta">Regresar a Consultas</a>
+                <a href="<?php echo site_url('admin');?>//tienda/cliente/consulta">Regresar a Consultas</a>
                 </center>
 			<?php
 			break;
@@ -4465,7 +4422,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 							<td width="20%" valign="top"></td>
 							<td width="20%" valign="top" align="right">
 								<?php foreach($consultaUno->result() as $cliente_info1){?>
-								<input type="button" value="Anterior" onClick="window.location.href='<?php echo base_url('admin');?>/tienda/cliente/editar_general/<?php echo $cliente_info1->idCliente;?>'"/> 
+								<input type="button" value="Anterior" onClick="window.location.href='<?php echo site_url('admin');?>/tienda/cliente/editar_general/<?php echo $cliente_info1->idCliente;?>'"/> 
 								<?php } ?>
 							</td>
 							<td width="20%" valign="top" align="left">
@@ -4480,7 +4437,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 				<?php } 
 				echo form_close(); ?>
 				<center>
-				<a href="<?php echo base_url('admin');?>//tienda/cliente/consulta">Regresar a Consultas</a>
+				<a href="<?php echo site_url('admin');?>//tienda/cliente/consulta">Regresar a Consultas</a>
 				</center>
 			<?php
 			break;
@@ -4496,7 +4453,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 							</tr>
 							<tr>
 								<td width="50%" valign="top" align="right">
-									<input type="button" value="Anterior" onClick="window.location.href='<?php echo base_url('admin');?>/tienda/cliente/editar_empresa/<?php echo $cliente_info->idCliente;?>'"/> 
+									<input type="button" value="Anterior" onClick="window.location.href='<?php echo site_url('admin');?>/tienda/cliente/editar_empresa/<?php echo $cliente_info->idCliente;?>'"/> 
 								</td>
 								<td width="50%" valign="top" align="left">
 									<input type="submit" value="Siguiente" name="siguiente"> 
@@ -4507,7 +4464,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 					<?php }
 					echo form_close();?>
                 <center>
-                <a href="<?php echo base_url('admin');?>//tienda/cliente/consulta">Regresar a Consultas</a>
+                <a href="<?php echo site_url('admin');?>//tienda/cliente/consulta">Regresar a Consultas</a>
                 </center>
 			<?php
 			break;
@@ -4526,7 +4483,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 							</tr>
 							<tr>
 								<td width="50%" valign="top" align="right">
-									<input type="button" value="Anterior" onClick="window.location.href='<?php echo base_url('admin');?>/tienda/cliente/editar_nota/<?php echo $cliente_info->idCliente;?>'"/> 
+									<input type="button" value="Anterior" onClick="window.location.href='<?php echo site_url('admin');?>/tienda/cliente/editar_nota/<?php echo $cliente_info->idCliente;?>'"/> 
 								</td>
 								<td width="50%" valign="top" align="left">
 									<input type="submit" value="Guardar" name="siguiente"> 
@@ -4537,7 +4494,7 @@ function construyeFormularioEdicion2($seccion,$rol,$consultaUno,$consultaDos,$co
 					<?php }
 					echo form_close();?>
 				<center>
-                <a href="<?php echo base_url('admin');?>//tienda/cliente/consulta">Regresar a Consultas</a>
+                <a href="<?php echo site_url('admin');?>//tienda/cliente/consulta">Regresar a Consultas</a>
                 </center>
 			<?php
 			break;

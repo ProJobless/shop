@@ -21,6 +21,7 @@ class Tienda extends CI_Controller {
             parent::__construct();
             
             $this->load->helper('funciones_custom_helper');
+            $this->load->helper('excel_helper');
 
 
         }
