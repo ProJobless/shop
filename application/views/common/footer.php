@@ -147,6 +147,20 @@ if($lateral_derecho != 0){?>
             //$('#cart-load').html('');
         });
         
+        $("#search-button").click(function(){
+            var search = $("#search-input").val().replace(/ /g,'_').replace(/(Á|á)/g,'a').replace(/(É|é|Ë|ë)/g,'e').replace(/(Í|í|Ï|ï)/g,'i').replace(/(Ó|ó|ö|Ö)/g,'o').replace(/(Ú|ú|Ü|ü)/g,'u').replace(/(Ñ|ñ)/g,'n');
+            if(search != ''){
+                //alert(search);
+                window.location.replace('<?php echo site_url('tienda/buscar/');?>/' + search);
+            }
+        });
+        
+        $("#search-input").keyup(function(event){
+            if(event.keyCode == 13) {
+                $("#search-button").click();
+            }
+        });
+        
         
     });
 </script>

@@ -15,6 +15,7 @@ class Categoria_model extends CI_Model {
     
     function get_categorias($campos='*'){
         $this->db->select($campos);
+        $this->db->where('activo','SI');
         $this->db->order_by('nombre','ASC');
         $q = $this->db->get('categoria');
         
@@ -27,6 +28,7 @@ class Categoria_model extends CI_Model {
             $this->db->where('Categoria_idCategoria',$idcategoria);
         }
         $this->db->select($campos);
+        $this->db->where('activo','SI');
         $this->db->order_by('nombre','ASC');
         $q = $this->db->get('subcategoria');
         

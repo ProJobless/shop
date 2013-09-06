@@ -6,6 +6,7 @@ class Tienda_model extends CI_Model {
         $this->load->model('categoria_model','categoria');
         
         $data['barra_lateral'] = $this->categoria->get_barra_lateral();
+        $data['top_ten'] = $this->top_ten();
         
         return $data;
     }

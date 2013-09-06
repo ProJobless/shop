@@ -39,7 +39,8 @@ class Producto_model extends CI_Model {
         
         $this->db->select($campos);
         $this->db->order_by('nombre','ASC');
-        $this->db->where(array('Subcategoria_idSubcategoria'=>$id));
+        $this->db->where(array('producto.activo' => 'SI'));
+        $this->db->where(array('Subcategoria_idSubcategoria'=>$id,'producto.activo' => 'SI'));
         $q = $this->db->get('producto',$per_page,$segment);
         
         return $q;
@@ -47,6 +48,7 @@ class Producto_model extends CI_Model {
 
     public function totalproductos($id) {
         $this->db->select('idProducto');
+        $this->db->where(array('producto.activo' => 'SI'));
         $q = $this->db->get_where('producto',array('Subcategoria_idSubcategoria'=>$id));
 
 
@@ -55,6 +57,7 @@ class Producto_model extends CI_Model {
     
     function get_presentacion_by_producto($id,$campos='*'){
         $this->db->select($campos);
+        $this->db->where(array('presentacion.activo' => 'SI'));
         $this->db->order_by('clave','ASC');
         $q = $this->db->get_where('presentacion',array('Producto_idProducto'=>$id));
         
