@@ -48,7 +48,7 @@ $this->load->view('common/header',$data); ?>
                             <strong class="font_naranja">Ingredientes: </strong><br />
                             <?php echo $p['ingredientes'];?>
                             <br />
-                            <a target="_blank" href="http://www.circulosaludable.com.mx/comercializadora/inicio/video/185/es"><img border="0" src="http://www.circulosaludable.com.mx/comercializadora/admin/img/ver_video.gif"></a><br>
+                            <a target="_blank" href="#N"><img border="0" src="<?php echo base_url('/img/ver_video.gif');?>"></a><br>
                     </div>
                     <a href="#N" class='btn btn-link cart-add' data-id='<?php echo $p['idPresentacion'];?>' data-qty='1' data-cartsize='pequenio' >Agregar a mi Carrito</a>
                 
