@@ -8,7 +8,7 @@
 
         <title>Shop | Some</title>
 
-        <link href="<?php echo base_url(); ?>bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
         <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
@@ -32,7 +32,7 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
         
-        <script src="<?php echo base_url(); ?>bootstrap/js/bootstrap.js"></script>
+        <script src="<?php echo base_url(); ?>bootstrap/js/bootstrap.min.js"></script>
         
         <script type=”text/javascript” >
 			$(document).ready(function(){
@@ -77,7 +77,7 @@
 
                 <div class='clearfix'></div>
 
-                <div id='imagenes'  style='height:200px; background-image:url(../../../img/headerback.jpg);' >
+                <div id='imagenes' "background-image:url(../../../img/headerback.jpg)"  style='height:200px; background-image:url(../../../img/headerback.jpg)' >
                 <img style="float:left; margin-top:20px; margin-left:10px" src="/img/logo-tecno.gif" /><a href="http://www.expoas.com.mx" target="_blank" ><img style="float:right; margin-top:20px; margin-right:20px;" src="/img/banner-expo-agosto.jpg" width="197" height="162" alt="expoalternativas"></a>
 				<a href="http://www.exposiempresaludable.com.mx" target="_blank"><img  style="float:right; margin-top:20px; margin-right:25px;" src="/img/banner-expo-guadalajara.jpg" width="197" height="162" alt="exposiempresaludable"></a>
                 </div>
